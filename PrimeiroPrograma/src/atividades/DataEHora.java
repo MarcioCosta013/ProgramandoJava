@@ -1,4 +1,4 @@
-package relogio;
+package atividades;
 
 import java.util.Date;
 
