@@ -1,0 +1,22 @@
+** Operador Ternário:
+
+		int n1, n2, r;
+		
+		r = (n1>n2)? n1:n2; se for verdadeiro recebe o que tem antes dos dois pontos, se não o que tem depois dos dois pontos.
+
+** Comraração entre string:
+
+		[String nome1 = "Marcio";] == [String nome2 = new String("Marcio");] ---> falso! mesmo tendo o mesmo conteudo elas são diferentes pq nome2 foi 
+																				instanciado e é portanto um Objeto.
+																				
+		nome1.equals(nome2); ---> Verdadeiro! pos não está comparando o tipo também , só o conteudo. (mesmo sendo de tipos diferentes).
+		
+** Operadores Logicos:
+
+		&& --> E  
+		|| --> OU 
+		^ --> eOU -----------------------> P  Q  P^Q
+		! --> NÃO						   V  V   F
+										   V  F   V
+										   F  V   V
+										   F  F   F  (OBS.: OU é um OU exclusivamente o outro = os dois não podem ser verdadeiros)
