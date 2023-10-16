@@ -1,0 +1,47 @@
+** Operadores Unários:
+
+	a++ é igual a (a = a + 1).
+	a-- é igual a (a = a - 1).
+	
+	(++) antes de 'a' realiza as contas já incluindo a adição de +1 a 'a'.
+	(++) Depois de 'a' realiza as contas e depois adiciona +1 só na variavel 'a' e não na conta anteriomente feita.
+	
+	
+** Operadores de atribuição:
+	
+	a += b igual a (a = a + b) --> soma e atribui.
+	o mesmo para (-=), (*=), (/=), (%=) ...
+	
+	
+** Classe Math:
+
+	Contante PI ---> é igual a (Math.PI) = restorna 3,1415... .
+	
+	Exponenciação (pow) ---> é igual a [Math.pow(a,b)] = resultado de a^b. 
+	
+	Raiz Quadrada (sqrt) ---> é igual a [Math.sqrt(a)] = resultado da raiz quadrada de a.
+	
+	Raiz Cubica (cbrt) ---> é igual a [Math.cbrt(a)] = resultado da raiz cubica de a.
+	
+	
+** Arredondamento com a classe Math:
+
+	Valor absoluto (abs) ---> [Math.abs(-10)] vai ser igual a 10. || Independente se é positivo ou negativo vai mostra só o valor...
+	
+	Arredodar para Baixo (floor) ---> [Math.floor(3.9)] vai ser igual a 3. || Independete do valor depois da virgula vai arredondar para baixo.
+	
+	Arredodar para Cima (ceil) ---> [Math.ceil(4.2)] vai ser igual a 5. || Independete do valor depois da virgula vai arredondar para cima.
+	
+	Arredodar aritmeticamente (round) ---> [Math.round(5.6)] vai ser igual a 6. || Se o valor depois da virgula for >=5 arredonda para cima
+																				  se for <5 arredonda para baixo.
+	
+	
+** Gerador de numeros automatico aleatório:
+
+	variavelRandom = Math.random() --> gera um numero entre 0.0 & 1.0 [gera um 'double' --> 0.234246545 e etc...].
+	
+	Para gera um numero de x até y ---> [x + Math.random() * (y - x)] exemplo gera de 5 a 10 [5 + variavelRandom * (10-5)].
+	
+	
+	
+	
