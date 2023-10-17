@@ -11,6 +11,10 @@ import java.awt.Font;
 import java.awt.Color;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.ChangeEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class TelaEquacaoSegundo extends JFrame {
 
@@ -45,30 +49,18 @@ public class TelaEquacaoSegundo extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JSpinner spnA = new JSpinner();
-		spnA.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		spnA.setBounds(45, 51, 30, 20);
-		contentPane.add(spnA);
 		
 		JLabel lblNewLabel = new JLabel("<html>X<sup>2</sup>+</html>");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblNewLabel.setBounds(75, 49, 36, 19);
 		contentPane.add(lblNewLabel);
 		
-		JSpinner spnB = new JSpinner();
-		spnB.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		spnB.setBounds(104, 51, 30, 20);
-		contentPane.add(spnB);
 		
 		JLabel lblNewLabel_1 = new JLabel("X-");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblNewLabel_1.setBounds(140, 54, 17, 14);
 		contentPane.add(lblNewLabel_1);
 		
-		JSpinner spnC = new JSpinner();
-		spnC.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		spnC.setBounds(156, 51, 30, 20);
-		contentPane.add(spnC);
 		
 		JLabel lblNewLabel_2 = new JLabel("= 0");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -112,6 +104,7 @@ public class TelaEquacaoSegundo extends JFrame {
 		panResul.setBounds(10, 211, 252, 73);
 		contentPane.add(panResul);
 		panResul.setLayout(null);
+		panResul.setVisible(false);
 		
 		JLabel lblNewLabel_10 = new JLabel("Tipo =");
 		lblNewLabel_10.setBounds(10, 43, 44, 19);
@@ -137,7 +130,56 @@ public class TelaEquacaoSegundo extends JFrame {
 		lblResulTipo.setBounds(64, 47, 178, 14);
 		panResul.add(lblResulTipo);
 		
+		JSpinner spnC = new JSpinner();
+		spnC.addChangeListener(new ChangeListener() {
+			public void stateChanged(ChangeEvent e) {
+				lblC.setText(spnC.getValue().toString());
+			}
+		});
+		spnC.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		spnC.setBounds(156, 51, 30, 20);
+		contentPane.add(spnC);
+		
+		JSpinner spnB = new JSpinner();
+		spnB.addChangeListener(new ChangeListener() {
+			public void stateChanged(ChangeEvent e) {
+				lblB.setText(spnB.getValue().toString());
+			}
+		});
+		spnB.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		spnB.setBounds(104, 51, 30, 20);
+		contentPane.add(spnB);
+		
+		JSpinner spnA = new JSpinner();
+		spnA.addChangeListener(new ChangeListener() {
+			public void stateChanged(ChangeEvent e) {
+				lblA.setText(spnA.getValue().toString());
+			}
+		});
+		spnA.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		spnA.setBounds(45, 51, 30, 20);
+		contentPane.add(spnA);
+		
 		JButton btnCalcular = new JButton("<html>Calcular &Delta</html>");
+		btnCalcular.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				panResul.setVisible(true);
+				
+				int valorA = Integer.parseInt(spnA.getValue().toString());
+				int valorB = Integer.parseInt(spnB.getValue().toString());
+				int valorC = Integer.parseInt(spnC.getValue().toString());
+				
+				double delta = Math.pow(valorB, 2) - 4 * valorA * valorC;
+				lblResDelta.setText(String.format("%.1f", delta));
+				
+				if (delta < 0) {
+					lblResulTipo.setText("Não existe valores reais... :(");
+				} else {
+					lblResulTipo.setText("Existem Raízes reais... :)");
+				}
+			}
+		});
 		btnCalcular.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnCalcular.setBounds(81, 160, 105, 27);
 		contentPane.add(btnCalcular);
