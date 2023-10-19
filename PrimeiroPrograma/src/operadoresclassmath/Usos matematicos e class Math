@@ -42,6 +42,8 @@
 	
 	Para gera um numero de x até y ---> [x + Math.random() * (y - x)] exemplo gera de 5 a 10 [5 + variavelRandom * (10-5)].
 	
+	(****OBS.: pode-se instanciar um objeto random e depois utilizar o objeto chamando o ".nextInt(x)" o X sendo quantos numeros você quer de 0 a x.****)
+	
 	
 	
 	
