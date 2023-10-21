@@ -43,7 +43,8 @@ public class ExercicioRepita {
 		} while ( valor != 0);
 		
 		JOptionPane.showMessageDialog(null, "<html>Total de numeros digitados: " + digi + "<br>Resultado final da soma é: " + resul + "<br>Total de Numeros par: " + numPar + "<br>Total de Numeros Impares: "
-										+ numImpar + "<br>Acima de 100: " + maiorQue + "<br>Media dos valores digitados:" + media + "</html>");
+										+ numImpar + "<br>Acima de 100: " + maiorQue + "<br>Media dos valores digitados:" + String.format("%.2f", media) /* para formatar com 
+										duas casas decimais*/+ "</html>");
 		
 		
 
